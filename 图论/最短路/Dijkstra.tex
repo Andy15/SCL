@@ -1,0 +1,9 @@
+\noindent 输入一张图，输出给定的两点间最短路径的长度。
+
+\begin{itemize}
+    \item 模板题参考了 \href{https://oiproxy.bugminer.top/OnlineJudge/problem_show.php?id=1127}{YZOJ P1127} 。
+    \item 使用邻接表存储图。
+    \item 虽然模板题只要求输出到给定点的最短路径的长度，但是实际上已经算出了\textbf{由一点出发到所有点的最短路径长度}。
+    \item 使用了 pbds 的配对堆。注意头文件和命名空间的变化。
+    \item 注意距离数组的初始化。
+\end{itemize}

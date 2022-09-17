@@ -90,7 +90,7 @@ void Subsubsection(LineBreaker LB1,int curpos){
             fprintf(tex,"\\begin{spacing}{1.5}\n\\input{%s/%s}\n\\end{spacing}\n",temp2,lb2.Texfile);
         }
         if(lb2.fl==0) continue;
-        fprintf(tex, "\\lstinputlisting{%s/%s}\n", temp2,lb2.file);
+        fprintf(tex, "\\inputminted{c++}{%s/%s}\n", temp2,lb2.file);
     }
     fclose(fp2);
 }
@@ -134,7 +134,7 @@ int main() {
             temp[strlen(temp)] = '/';
 
             strcat(temp, lb.file);
-            fprintf(tex, "\\lstinputlisting{%s}\n", temp);
+            fprintf(tex, "\\inputminted{c++}{%s}\n", temp);
         }
         fclose(fp);
     }

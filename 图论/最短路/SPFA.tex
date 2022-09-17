@@ -1,0 +1,13 @@
+\noindent 输入一张图，输出给定的两点间最短路径的长度。
+
+\begin{itemize}
+    \item 模板题参考了 \href{https://oiproxy.bugminer.top/OnlineJudge/problem_show.php?id=1127}{YZOJ P1127} 。
+    \item 使用邻接表存储图。
+    \item 虽然模板题只要求输出到给定点的最短路径的长度，但是实际上已经算出了\textbf{由一点出发到所有点的最短路径长度}。
+    \item 没事干就别用这玩意儿了。\href{https://www.luogu.com.cn/problem/P4768}{会被卡的}。
+    \item 听说真正的猛士会使用被称为 SLF 和 LLL 的东西来赌一把，试验一下人类能不能造出把自己卡到指数级复杂度的数据。
+    \item 注意距离数组的初始化。
+    \item 如果要求网格图或边权全部相同的图的最短路，写个 \textbf{BFS} 就好了。
+    \item 这玩意儿能用来判断图中是否存在负环：记录下每个结点的入队次数，如果一个结点的入队次数已经超过该图的点数，这张图就存在负环，不存在最短路。
+    \item 差分约束问题常用这个算法来解决：对于每个约束条件 \textbf{$x_i - x_j \le c_k$}，从结点 \textbf{$j$} 向结点 \textbf{$i$} 连一条长度为 \textbf{$c_k$} 的有向边，则 \textbf{$x_i = d_i$} 为该差分约束系统的一组解。
+\end{itemize}

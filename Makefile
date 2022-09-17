@@ -1,12 +1,10 @@
 template.pdf: template.tex main
 	./main
-	pdflatex template.tex
-	pdflatex template.tex
+	xelatex template.tex -shell-escape
+	xelatex template.tex -shell-escape
+	xelatex template.tex -shell-escape
 
 template.tex: main
 
 main: main.cpp
-	cc main.cpp -o main
-
-clean:
-	rm template.* main
+	g++ main.cpp -o main

@@ -4,8 +4,9 @@
 
 using namespace std;
 int n, m, s, t, dis[MAXN];
+bool vis[MAXN];
 vector<pair<int, int> > g[MAXN];
-__gnu_pbds::priority_queue<pair<int, int>, greater<pair<int, int> >, __gnu_pbds::pairing_heap_tag> q;
+queue<int> q;
 
 int main() {
     memset(dis, INF, sizeof(dis));
@@ -15,14 +16,19 @@ int main() {
         g[u].push_back(make_pair(w, v));
     }
     dis[s] = 0;
-    q.push(make_pair(0, s));
+    q.push(s);
     while (!q.empty()) {
-        int u = q.top().second;
+        int u = q.front();
         q.pop();
+        vis[u] = 0;
         for (auto &e : g[u]) {
             int v = e.second, w = e.first;
             if (dis[v] > dis[u] + w) {
-                q.push(make_pair(dis[v] = dis[u] + w, v));
+                dis[v] = dis[u] + w;
+                if (!vis[v]) {
+                    vis[v] = 1;
+                    q.push(v);
+                }
             }
         }
     }

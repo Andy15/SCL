@@ -1,0 +1,14 @@
+\begin{itemize}
+    \item 采用 \href{https://zh-google-styleguide.readthedocs.io}{\textbf{Google} 代码规范}（的来自 \textbf{MirAc1e} 的魔改版）。
+    \item \textbf{不要觉得你比开发编译器的那帮老家伙更聪明。}
+    \item 不要再使用已经被废弃的 \mintinline{c++}{register} 和 \mintinline{c++}{inline} 关键字。不要自我感觉良好地做一些只存在于想象中的优化。
+    \item 预处理器指令应当处于文件的开头，且 \mintinline{c++}{#include} 指令应在最上方，其次是 \mintinline{c++}{#define} 指令。这之后应当有一个空行。大多数情况下需要包含的头文件只有 \mintinline{c++}{<bits/stdc++.h>} 。极少数情况下允许使用 \mintinline{c++}{<bits/extc++.h>} 。
+    \item 一般情况下整数的最大值应由连续的几个 \mintinline{c++}{0x3f} 组成。
+    \item 一般情况下数组的大小应在预处理器指令中定义，且由一串相同的阿拉伯数字组成。
+    \item \textbf{不要缩行。}
+    \item 尽可能避免使用逗号表达式和奇怪的逻辑运算操作（反例可以在 \textbf{MirAc1e} 高中时的代码中找到）。
+    \item 代码中应当包含足够多却又不多余的空格以保证可读性（可参照模板中的代码）。
+    \item 在程序正常结束时 \mintinline{c++}{main} 函数应当显式地返回 \textbf{0} 。
+    \item 程序应当输出一系列完整的行。也就是说，输出应当以一个空行结尾。
+    \item 文件末尾\textbf{不必}留有一个空行。
+\end{itemize}
